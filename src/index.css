@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+:root {
+  /* Mode Light épuré (clean, crisp, elegant) */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --bg-sidebar: #ffffff;
+  --bg-header: #ffffff;
+  --bg-input: #f1f5f9;
+  --border-subtle: #e2e8f0;
+  --border-card: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --bubble-ai: #ffffff;
+  --bubble-ai-border: #e2e8f0;
+  --bubble-ai-text: #1e293b;
+  --bubble-user: #0a84ff;
+  --bubble-user-text: #ffffff;
+  --accent-blue: #0a84ff;
+  --accent-cyan: #0284c7;
+  --card-bg: #ffffff;
+  --card-hover: #f1f5f9;
+  --code-bg: #f8fafc;
+  --code-border: #cbd5e1;
+  --code-text: #0284c7;
+  --scrollbar-thumb: rgba(100, 116, 139, 0.25);
+  --scrollbar-track: rgba(241, 245, 249, 0.8);
+  --modal-bg: #ffffff;
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+html.dark {
+  /* Mode Dark immersif (actuel néon) */
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #141416;
+  --bg-sidebar: #0a0a0a;
+  --bg-header: #0a0a0a;
+  --bg-input: #1a1a1a;
+  --border-subtle: #1a1a1a;
+  --border-card: rgba(255, 255, 255, 0.08);
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --bubble-ai: #111111;
+  --bubble-ai-border: rgba(255, 255, 255, 0.1);
+  --bubble-ai-text: #f1f5f9;
+  --bubble-user: #0a84ff;
+  --bubble-user-text: #ffffff;
+  --accent-blue: #0a84ff;
+  --accent-cyan: #00d4ff;
+  --card-bg: #111114;
+  --card-hover: #181820;
+  --code-bg: rgba(0, 0, 0, 0.6);
+  --code-border: rgba(10, 132, 255, 0.3);
+  --code-text: #00d4ff;
+  --scrollbar-thumb: rgba(255, 255, 255, 0.15);
+  --scrollbar-track: rgba(10, 10, 10, 0.6);
+  --modal-bg: #0e0e11;
+  --shadow-subtle: 0 4px 25px rgba(0, 0, 0, 0.4);
+}
+
+@theme {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-bg-sidebar: var(--bg-sidebar);
+  --color-bg-header: var(--bg-header);
+  --color-bg-input: var(--bg-input);
+  --color-border-subtle: var(--border-subtle);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-bubble-ai: var(--bubble-ai);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-cyan: var(--accent-cyan);
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom glowing pulse animations */
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(10, 132, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(10, 132, 255, 0.8), 0 0 100px rgba(0, 212, 255, 0.4);
+  }
+}
+
+@keyframes mic-wave {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 12px rgba(239, 68, 68, 0);
+  }
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 2.5s infinite ease-in-out;
+}
+
+.animate-mic-wave {
+  animation: mic-wave 1.2s infinite ease-in-out;
+}
+
+/* Custom scrollbars adapted for themes */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
+
+/* Neon text shadows */
+.text-neon-cyan {
+  text-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+}
+
+.text-neon-blue {
+  text-shadow: 0 0 20px rgba(10, 132, 255, 0.7);
+}

@@ -1,0 +1,9 @@
+{
+  "name": "JANGOIA - Assistant Scolaire & Tuteur IA",
+  "description": "Assistant IA intelligent & tuteur d'exercices tout-en-un avec résolution par photo, synthèse vocale et explications étape par étape.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
